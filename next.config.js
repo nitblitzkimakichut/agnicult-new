@@ -5,6 +5,15 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
     unoptimized: true,
+    // Add these to handle missing images gracefully
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
   // Uncomment this if deploying to GitHub Pages
   // basePath: '/agnicult',
