@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['localhost'],
+    unoptimized: true,
   },
   // Uncomment this if deploying to GitHub Pages
   // basePath: '/agnicult',
@@ -16,6 +17,12 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  
+  // Add this for Netlify
+  trailingSlash: true,
+  
+  // Ensure static export for Netlify
+  output: 'export',
 }
 
 module.exports = nextConfig 
