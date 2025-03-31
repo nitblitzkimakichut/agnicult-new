@@ -1,0 +1,16 @@
+The following images are required in the /public/images directory:
+
+1. dark-fire-bg.jpg - Dark background with subtle ember/fire effect for hero section
+2. warrior-meditation.jpg - Image of a warrior in meditation pose for about section
+3. sacred-geometry.svg - Sacred geometry pattern for background decoration
+4. noise-pattern.png - Subtle noise pattern for background texture
+5. ember-pattern.jpg - Ember/fire pattern for section backgrounds
+6. discord-community.jpg - Screenshot of Discord community for community section
+7. testimonial-1.jpg - Profile image for testimonial 1
+8. testimonial-2.jpg - Profile image for testimonial 2
+9. testimonial-3.jpg - Profile image for testimonial 3
+
+Also required in the /public/fonts directory:
+1. Ksatria.woff2 - A display font for headings
+
+Note: When deploying, make sure to add these files or replace the references in the code with appropriate alternatives. 

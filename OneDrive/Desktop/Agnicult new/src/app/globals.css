@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1a1a1a;
+  --ember: #ff4000;
+  --ember-dark: #cc2000;
+  --ash: #333333;
+  --silver: #c0c0c0;
+}
+
+@font-face {
+  font-family: 'Ksatria';
+  src: url('/fonts/Ksatria.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--primary);
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ksatria', serif;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ff4000, #ff8c66);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.ember-glow {
+  box-shadow: 0 0 20px rgba(255, 64, 0, 0.5);
+}
+
+.bg-ember-gradient {
+  background: linear-gradient(135deg, var(--ember), var(--ember-dark));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ember);
+  border-radius: 3px;
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.flicker {
+  animation: flicker 4s infinite ease-in-out;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .reveal-on-scroll {
+    transform: translateY(20px); /* Smaller animation distance on mobile */
+  }
+  
+  /* Improved touch targets for mobile */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Accessibility improvements */
+:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 2px;
+}
+
+/* Prevent content shifts during loading */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent image-based layout shifts */
+img {
+  max-width: 100%;
+  height: auto;
+} 
